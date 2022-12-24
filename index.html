@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/style.css">
+  <title>Sign In Form</title>
+</head>
+<body>
+  <div class="main">
+
+    <form action="" method="POST" class="form" id="form-1">
+      <h3 class="heading">Đăng ký thành viên</h3>
+      <p class="desc">Học React cùng Trang 🐕</p>
+  
+      <div class="spacer"></div>
+  
+      <div class="form-group">
+        <label for="fullname" class="form-label">Tên đầy đủ</label>
+        <div>
+          <div class="form-form">
+            <input id="fullname" name="fullname" type="text" placeholder="VD: Trang Cua" class="form-control">
+          </div>
+        </div>
+        <span class="form-message"></span>
+      </div>
+  
+      <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input id="email" name="email" type="text" placeholder="VD: email@domain.com" class="form-control">
+        <span class="form-message"></span>
+      </div>
+  
+      <div class="form-group">
+        <label for="password" class="form-label">Mật khẩu</label>
+        <input id="password" name="password" type="text" placeholder="Nhập mật khẩu" class="form-control">
+        <span class="form-message"></span>
+      </div>
+  
+      <div class="form-group">
+        <label for="password_confirmation" class="form-label">Nhập lại mật khẩu</label>
+        <input id="password_confirmation" name="password_confirmation" placeholder="Nhập lại mật khẩu" type="text" class="form-control">
+        <span class="form-message"></span>
+      </div>
+
+      <div class="form-group">
+        <div class="from-group-radio">
+          <label class="form-label">Giới tính</label>
+          <input name="gender" type="radio" value= "male" class="form-radio"> Nam
+          <input name="gender" type="radio" value= "female" class="form-radio"> Nữ
+          <input name="gender" type="radio" value= "other" class="form-radio"> Khác
+        </div>
+        <span class="form-message"></span>
+      </div>
+
+      <div class="form-group">
+        <div class="privacy--policy">
+          <div>
+            <input type="checkbox" value="agree" name="privacy--policy" id="agree-privacy--policy">
+            <label for="agree-privacy--policy" class="discription">
+              Bằng cách đăng ký, bạn đồng ý với <a href="https:facebook.com/sangpda83" target="_blank">Điều khoản dịch vụ và Chính sách bảo mật</a> của chúng tôi.
+            </label>
+            </div>
+        </div>
+        <span class="form-message"></span>
+      </div>
+  
+      <button class="form-submit">Đăng ký</button>
+    </form>
+  
+  </div>
+  <script src="./assets/index.js"></script>
+  <script>
+    Validator ({
+      form: "#form-1",
+      parentSelector: ".form-group",
+      errorSelector: ".form-message",
+      errorStyleList: "invalid",
+      rules: [
+        // Validator.isRequied("#fullname"),
+        // Validator.isFullname("#fullname", "Vui lòng nhập tên đầy đủ của bạn"),
+        // Validator.isRequied("#email"),
+        // Validator.isEmail("#email","Email không hợp lệ"),
+        // Validator.isRequied("#password"),
+        // Validator.isPassword("#password", "Mật khẩu là một chuỗi từ 8 đến 15 ký tự phải chứa tối thiểu một chữ in hoa, một chữ in thường, một chữ số và một ký tự đặc biệt"),
+        // Validator.isRequied("#password_confirmation"),
+        // Validator.isConfigPassword("#password_confirmation", function() {
+        //   return document.querySelector("#form-1 #password").value
+        // }, "Xác nhận mật khẩu không chính xác")
+        Validator.isRadioCheckbox('input[name="gender"]', "Hãy lựa chọn giới tính thật của bạn"),
+        // Validator.isRadioCheckbox('input[name="privacy--policy"]', "Vui đồng ý nếu bạn muốn đăng ký"),
+      ],
+      onSubmit: function(data) {
+        console.log(JSON.stringify(data));
+      }
+    });
+  </script>
+</body>
+</html> 
