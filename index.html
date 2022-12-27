@@ -12,7 +12,7 @@
 
     <form action="" method="POST" class="form" id="form-1">
       <h3 class="heading">Đăng ký thành viên</h3>
-      <p class="desc">Học React cùng Trang 🐕</p>
+      <p class="desc">Học JS cùng tui</p>
   
       <div class="spacer"></div>
   
@@ -20,7 +20,7 @@
         <label for="fullname" class="form-label">Tên đầy đủ</label>
         <div>
           <div class="form-form">
-            <input id="fullname" name="fullname" type="text" placeholder="VD: Trang Cua" class="form-control">
+            <input id="fullname" name="fullname" type="text" placeholder="VD: Alo Cua" class="form-control">
           </div>
         </div>
         <span class="form-message"></span>
@@ -59,7 +59,7 @@
           <div>
             <input type="checkbox" value="agree" name="privacy--policy" id="agree-privacy--policy">
             <label for="agree-privacy--policy" class="discription">
-              Bằng cách đăng ký, bạn đồng ý với <a href="https:facebook.com/sangpda83" target="_blank">Điều khoản dịch vụ và Chính sách bảo mật</a> của chúng tôi.
+              Bằng cách đăng ký, bạn đồng ý với <a href="https:facebook.com" target="_blank">Điều khoản dịch vụ và Chính sách bảo mật</a> của chúng tôi.
             </label>
             </div>
         </div>
@@ -78,18 +78,18 @@
       errorSelector: ".form-message",
       errorStyleList: "invalid",
       rules: [
-        // Validator.isRequied("#fullname"),
-        // Validator.isFullname("#fullname", "Vui lòng nhập tên đầy đủ của bạn"),
-        // Validator.isRequied("#email"),
-        // Validator.isEmail("#email","Email không hợp lệ"),
-        // Validator.isRequied("#password"),
-        // Validator.isPassword("#password", "Mật khẩu là một chuỗi từ 8 đến 15 ký tự phải chứa tối thiểu một chữ in hoa, một chữ in thường, một chữ số và một ký tự đặc biệt"),
-        // Validator.isRequied("#password_confirmation"),
-        // Validator.isConfigPassword("#password_confirmation", function() {
-        //   return document.querySelector("#form-1 #password").value
-        // }, "Xác nhận mật khẩu không chính xác")
+        Validator.isRequied("#fullname"),
+        Validator.isFullname("#fullname", "Vui lòng nhập tên đầy đủ của bạn"),
+        Validator.isRequied("#email"),
+        Validator.isEmail("#email","Email không hợp lệ"),
+        Validator.isRequied("#password"),
+        Validator.isPassword("#password", "Mật khẩu là một chuỗi từ 8 đến 15 ký tự phải chứa tối thiểu một chữ in hoa, một chữ in thường, một chữ số và một ký tự đặc biệt"),
+        Validator.isRequied("#password_confirmation"),
+        Validator.isConfigPassword("#password_confirmation", function() {
+          return document.querySelector("#form-1 #password").value
+        }, "Xác nhận mật khẩu không chính xác"),
         Validator.isRadioCheckbox('input[name="gender"]', "Hãy lựa chọn giới tính thật của bạn"),
-        // Validator.isRadioCheckbox('input[name="privacy--policy"]', "Vui đồng ý nếu bạn muốn đăng ký"),
+        Validator.isRadioCheckbox('input[name="privacy--policy"]', "Vui đồng ý nếu bạn muốn đăng ký"),
       ],
       onSubmit: function(data) {
         console.log(JSON.stringify(data));
